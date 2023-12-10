@@ -1,7 +1,6 @@
 //Danielle Taplin
 //app.component.ts
-//11/18/23
-//app component for in n out books p1
+//12/10/2023
 
 //import component from angular
 import { Component } from '@angular/core';

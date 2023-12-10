@@ -1,34 +1,22 @@
 <!--
 Danielle Taplin
 app.component.html
-11/18/23
-app component for in n out books p1
+12/7/2023
  -->
-<mat-toolbar class="toolbar">
-  <mat-toolbar-row>
-    <div class="logo">
-      <img src="../assets/In-N-Out books Logo.png" height="80" />
-    </div>
-    <div style="width: 80%">
-      <div fxLayout="row wrap" fxLayoutAlign="end start">
-        <button mat-button routerLink="/book-list">Book List</button>
-        <button mat-button routerLink="/wishlist">Wishlist</button>
-        <button mat-button routerLink="/contact">Contact Us</button>
-        <button mat-button routerLink="/about">About Us</button>
-      </div>
-    </div>
-  </mat-toolbar-row>
+ <mat-toolbar class="toolbar" color="accent">
+	<mat-toolbar-row>
+			<h1>Loan App</h1>
+		<div style="width: 80%">
+			<!-- Main Navigation -->
+			<div fxLayout="row wrap" fxLayoutAlign="end start">
+				<button class="button" mat-button routerLink="/">Home</button>
+				<button class="button" mat-button routerLink="/contact">
+					Contact Us
+				</button>
+				<button class="button" mat-button routerLink="/about">About Us</button>
+			</div>
+		</div>
+	</mat-toolbar-row>
 </mat-toolbar>
+<router-outlet></router-outlet>
 
-<br />
-<div fxLayout="row wrap">
-  <div fxFlex>
-    <mat-card class="main-container">
-      <mat-card-title class="blue">{{ assignment }}</mat-card-title>
-      <br /><br />
-      <mat-card-content>
-        <router-outlet></router-outlet>
-      </mat-card-content>
-    </mat-card>
-  </div>
-</div>

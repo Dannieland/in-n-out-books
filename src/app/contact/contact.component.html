@@ -1,37 +1,29 @@
 <!--
 Danielle Taplin
 contact.component.html
-11/18/23
-contact component for in n out books p1
+12/7/23
  -->
-<div fxLayout="row wrap">
-  <div fxFlex>
-    <mat-card-title class="card-title-icon">
-      <mat-icon color="primary">navigation</mat-icon>
-    </mat-card-title>
-    <br />
-    <mat-card-content class="align-center">
-      <p>670 W Ave</p>
-      <p>Phoenix, Arizona</p>
-    </mat-card-content>
-  </div>
+ <div fxLayout="column" class="blue">
+	<h1 class="yellow">{{ title }}</h1>
 
-  <div fxFlex>
-    <mat-card-title class="card-title-icon">
-      <mat-icon color="primary">phone</mat-icon>
-    </mat-card-title>
-    <br />
-    <mat-card-content class="align-center">
-      <p>Direct: 123-456-7890</p>
-      <p>Toll-free: 1-800-123-4567</p>
-      <p>Fax: 111-222-3334</p>
-    </mat-card-content>
-  </div>
-</div>
-
-<br /><br /><br /><br />
-<div fxLayout="column">
-    <p style="text-align: center">
-        Visit us online or at our main location in Phoenix, Arizona.
-    </p>
+	<mat-card class="contact">
+		<mat-card-content>
+			<p>
+				<i class="material-icons md-">phone</i><br />
+				111 ABC Ave<br />
+				Omaha<br />
+				Nebraska, 12345
+			</p>
+		</mat-card-content>
+	</mat-card>
+	<mat-card class="contact">
+		<mat-card-content>
+			<p>
+				<i class="material-icons md-">email</i><br />
+				- Direct: 555-555-5555 <br />
+				- Toll-Free: 5-555-555-5555<br />
+				- Fax: 555-555-555
+			</p>
+		</mat-card-content>
+	</mat-card>
 </div>

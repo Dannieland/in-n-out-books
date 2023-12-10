@@ -1,0 +1,83 @@
+<div fxLayout="column" class="blue">
+	<h1 *ngIf="visibleGreeting" class="yellow">{{ title }}</h1>
+	<h1 *ngIf="visibleResultsH1" class="yellow">{{ resultTitle }}</h1>
+	<div class="loan-form" fxFlex>
+		<div
+			*ngIf="
+				(form['loanAmount'].errors && form['loanAmount'].touched) ||
+				(form['numberOfYears'].errors && form['numberOfYears'].touched) ||
+				(form['interest'].errors && form['interest'].touched)
+			"
+		>
+			<div class="msg-error">Must be a positive numeric value.</div>
+		</div>
+		<mat-card class="mat-elevation-z8">
+			<mat-card-content class="light-blue results">
+				<div *ngIf="visibleResults">
+					<h1>
+						Your monthly payment: <br />
+						<span class="yellow">{{ monthlyPayment | currency }}</span>
+						<br />Interest paid over loan term: <br />
+						<span class="yellow">{{ totalInterest | currency }}</span>
+					</h1>
+					<button id="back-to-form" (click)="backToForm()">
+						Back to Loan Form
+					</button>
+				</div>
+				<form
+					[formGroup]="loanForm"
+					(ngSubmit)="onSubmit($event)"
+					fxLayout="column"
+					fxLayoutGap="16px"
+					*ngIf="visibleForm"
+				>
+					<mat-form-field fxFlex appearance="fill">
+						<mat-label>{{ loanAmountPlaceHolder }}</mat-label>
+						<input
+							type="text"
+							name="txtLoanAmount"
+							required
+							id="txtLoanAmount"
+							matInput
+							formControlName="loanAmount"
+							placeholder="Ex: 5000"
+						/>
+					</mat-form-field>
+					<mat-form-field fxFlex appearance="fill">
+						<mat-label>Interest</mat-label>
+						<input
+							type="text"
+							name="txtInterest"
+							required
+							id="txtInterest"
+							matInput
+							formControlName="interest"
+							placeholder="Ex: 3.6"
+						/>
+					</mat-form-field>
+					<mat-form-field fxFlex appearance="fill">
+						<mat-label>Number of Years</mat-label>
+						<input
+							type="text"
+							name="txtNumOfYears"
+							required
+							id="txtNumOfYears"
+							matInput
+							formControlName="numberOfYears"
+							placeholder="Ex: 5"
+						/>
+					</mat-form-field>
+					<button
+						type="button"
+						mat-raised-button
+						[disabled]="!loanForm.valid"
+						color="accent"
+						(click)="calculateLoan(); loanForm.reset()"
+					>
+						Calculate
+					</button>
+				</form>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>
